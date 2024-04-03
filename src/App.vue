@@ -1,5 +1,5 @@
 <template>
-  <div class="main loading">
+  <div class="main" v-loading="isLoding">
     <div class="box">
       <ul>
         <li v-for="item in list" :key="item.id" class="news">
@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       list: [],
+      isLoding: true,
     };
   },
   async created() {
@@ -40,8 +41,19 @@ export default {
     setTimeout(() => {
       // 2. 更新到 list 中
       this.list = res.data.data;
+      this.isLoding = false
     }, 2000);
   },
+  directives: {
+    loading: {
+      inserted(el, binding) {
+        binding.value ? el.classList.add('loading') : el.classList.remove('loading')
+      },
+      update(el, binding) {
+        binding.value ? el.classList.add('loading') : el.classList.remove('loading')
+      }
+    }
+  }
 };
 </script>
 
@@ -52,8 +64,8 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 800px;
+  height: 500px;
   background: #fff url("./loading.gif") no-repeat center;
 }
 
@@ -71,6 +83,7 @@ export default {
   border-radius: 5px;
   position: relative;
 }
+
 .news {
   display: flex;
   height: 120px;
@@ -79,6 +92,7 @@ export default {
   padding: 20px 0;
   cursor: pointer;
 }
+
 .news .left {
   flex: 1;
   display: flex;
@@ -86,19 +100,24 @@ export default {
   justify-content: space-between;
   padding-right: 10px;
 }
+
 .news .left .title {
   font-size: 20px;
 }
+
 .news .left .info {
   color: #999999;
 }
+
 .news .left .info span {
   margin-right: 20px;
 }
+
 .news .right {
   width: 160px;
   height: 120px;
 }
+
 .news .right img {
   width: 100%;
   height: 100%;
