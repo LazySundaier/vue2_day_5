@@ -6,8 +6,9 @@
     </div>
 
     <div class="dialog-content">
-      <!-- 1.在需要定制的位置使用slot占位 -->
-      <slot></slot>
+      <slot>
+        双休日(默认值)
+      </slot>
     </div>
     <div class="dialog-footer">
       <button>取消</button>

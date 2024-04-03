@@ -1,26 +1,22 @@
 <template>
   <div>
-    <!-- 2.在使用组件时,在slot中填入相应内容 -->
     <MyDialog>
-      你确认要删除吗
-    </MyDialog>
-    <MyDialog>
-      <p>111</p>
-      <p>333</p>
-      <p>222</p>
+      我不是默认值
     </MyDialog>
   </div>
 </template>
 
 <script>
-import MyDialog from "./components/MyDialog.vue"
+import MyDialog from './components/MyDialog.vue'
 export default {
-  data() {
-    return {}
+  data () {
+    return {
+
+    }
   },
   components: {
-    MyDialog,
-  },
+    MyDialog
+  }
 }
 </script>
 
