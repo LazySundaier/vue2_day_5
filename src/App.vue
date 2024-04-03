@@ -1,25 +1,20 @@
 <template>
   <div>
-    <h1>自定义指令</h1>
-    <input v-focus ref="inp" type="text" />
+    <h1>指令的值1测试</h1>
+    <h1>指令的值2测试</h1>
   </div>
 </template>
 
 <script>
 export default {
-  // mounted() {
-  //   this.$refs.inp.focus();
-  // },
-  directives: {
-    //指令名
-    focus: {
-      inserted(el) {
-        el.focus();
-      },
-    },
-  },
-};
+  data () {
+    return {
+      
+    }
+  }
+}
 </script>
 
 <style>
+
 </style>
