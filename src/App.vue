@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main loading">
     <div class="box">
       <ul>
         <li v-for="item in list" :key="item.id" class="news">
@@ -36,6 +36,7 @@ export default {
     // 1. 发送请求获取数据
     const res = await axios.get("http://hmajax.itheima.net/api/news");
 
+    //模拟延时
     setTimeout(() => {
       // 2. 更新到 list 中
       this.list = res.data.data;
