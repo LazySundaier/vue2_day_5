@@ -1,29 +1,23 @@
 <template>
   <div class="dialog">
     <div class="dialog-header">
-      <h3>友情提示</h3>
-      <span class="close">✖️</span>
+      <slot name="head"></slot>
     </div>
 
     <div class="dialog-content">
-      <slot>
-        双休日(默认值)
-      </slot>
+      <slot name="content"></slot>
     </div>
     <div class="dialog-footer">
-      <button>取消</button>
-      <button>确认</button>
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-
-    }
-  }
+  data() {
+    return {}
+  },
 }
 </script>
 

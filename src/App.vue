@@ -1,7 +1,13 @@
 <template>
   <div>
     <MyDialog>
-      我不是默认值
+      <!-- v-slot可以简写为# -->
+      <template #head>大标题</template>
+      <template #content>内容区</template>
+      <template #footer>
+        <button>取消</button>
+        <button>确认</button>
+      </template>
     </MyDialog>
   </div>
 </template>
